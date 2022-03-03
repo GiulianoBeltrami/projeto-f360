@@ -20,28 +20,11 @@ namespace Klingon
 
             FileReader reader = new FileReader();
 
-            List<string> texts = new List<string>();
-
-            IEnumerable<string> txtFiles = Directory.EnumerateFiles("./assets", "*.txt");
+            string text = reader.ParseFile("./assets/klingon-textoB.txt");
             
-            foreach (string file in txtFiles)
-            {
-                texts.Add(reader.ParseFile(file));
-            }
+            Prepositions prepositions = new Prepositions(text);
 
-            string[] textA_List = texts[0].Split(' ');
-
-            List<string> textA_Prepositions = new List<string>();
-
-            foreach (string text in textA_List)
-            {
-                if (text.Length == 3 && BarLetters.Contains(text[2].ToString()) && !text.Contains("d"))
-                {
-                    textA_Prepositions.Add(text);
-                }
-            }
-
-            System.Console.WriteLine(textA_Prepositions.Count);
+            System.Console.WriteLine("Preposições no texto: " + prepositions.Get().Count);
         }
     }
 }

@@ -6,10 +6,10 @@ using System.Linq;
 
 namespace Tests
 {
-    public class KlingonAlphabetTest
+    public class FooTest
     {
         [Fact]
-        public void FooLetters_Should_Return_slfwk_String_List()
+        public void Get_SLFWK_ReturnSameLetters()
         {
             Foo foo = new Foo();
             List<string> expectedLetters = new List<string>() { "s", "l", "f", "w", "k" };
@@ -19,25 +19,33 @@ namespace Tests
             Assert.Equal(expectedLetters, fooLetters);
         }
 
+    }
+
+    public class BarTest
+    {
+
         [Fact]
-        public void BarLetters_Should_Not_Return_List_With_Foo_Letters()
+        public void Get_Letters_ReturnLetters()
         {
             Foo foo = new Foo();
             List<string> fooLetters = foo.Get();
             Bar bar = new Bar();
 
-
             List<string> barLetters = bar.Get();
+            bool IsBarContainFoo = barLetters.Any(x => fooLetters.Any(y => x == y));
 
-            Assert.False(barLetters.Any(x => fooLetters.Any(y => x == y)));
+            Assert.NotEmpty(barLetters);
+            Assert.False(IsBarContainFoo);
         }
+    }
 
+    public class PrepositionsTest
+    {
         [Fact]
-        public void GetPrepositions_Should_Return_VWV_List()
+        public void Get_OnePreposition_ReturnOnePreposition()
         {
-            string testPreposition = "vwv";
-            Prepositions prepositions = new Prepositions(testPreposition);
-            List<string> expectedPrepositionList = new List<string>() { testPreposition };
+            Prepositions prepositions = new Prepositions("vwv");
+            List<string> expectedPrepositionList = new List<string>() { "vwv" };
 
             List<string> actualPrepositionList = prepositions.Get();
 
@@ -45,10 +53,9 @@ namespace Tests
         }
 
         [Fact]
-        public void GetPrepositions_Should_Return_Empty_List()
+        public void Get_Empty_ReturnEmpty()
         {
-            string testPreposition = "vdv";
-            Prepositions prepositions = new Prepositions(testPreposition);
+            Prepositions prepositions = new Prepositions("");
             List<string> expectedPrepositionList = new List<string>();
 
             List<string> actualPrepositionList = prepositions.Get();
@@ -56,18 +63,26 @@ namespace Tests
             Assert.Equal(expectedPrepositionList, actualPrepositionList);
         }
 
-
-        [Fact]
-        public void GetPrepositions_Should_VWV_VWV_List()
+        [Theory]
+        [InlineData("vwv vwv")]
+        [InlineData("vwv vwv vww vdv")]
+        public void Get_TwoPrepostions_ReturnTwoPrepostions(string preposition)
         {
-            string[] testPreposition = "vwv vwv".Split(' ');
-            Prepositions prepositions = new Prepositions(testPreposition);
-            List<string> expectedPrepositionList = new List<string>() { testPreposition };
 
+            List<string> expectedPrepositionList = new List<string>();
+            expectedPrepositionList.Add("vwv");
+            expectedPrepositionList.Add("vwv");
+            Prepositions prepositions = new Prepositions(preposition);
 
             List<string> actualPrepositionList = prepositions.Get();
 
             Assert.Equal(expectedPrepositionList, actualPrepositionList);
         }
+
+    }
+
+    public class VerbsTest
+    {
+        
     }
 }

@@ -9,17 +9,17 @@ namespace Tests
     public class FileManagerTest
     {
         [Fact]
-        public void ParseFile_Should_Return_HelloWord()
+        public void ParseFile_HelloWorldTXT_ReturnHelloWorld()
         {
             
             FileReader reader = new FileReader();
-            string path = "../../../TestFiles/helloWord-sample.txt";
+            string path = "../../../TestFiles/helloWorld-sample.txt";
             string content = reader.ParseFile(path).ToLower();
             Assert.Equal("hello world",content);
         }
 
         [Fact]
-        public void ParseFile_Should_Return_Empty()
+        public void ParseFile_EmptyTXT_ReturnEmpty()
         {
             
             FileReader reader = new FileReader();

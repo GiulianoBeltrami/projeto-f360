@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
+using TextHandler;
 
 namespace KlingonAlphabet
 {
@@ -50,45 +50,63 @@ namespace KlingonAlphabet
 
     public class Prepositions
     {
-        private string _text;
+        private string[] _text;
+        
         public Prepositions(string text)
         {
-            _text = text;
+            TextFormatter textFormatter = new TextFormatter(text);
+            _text = textFormatter.SplitText();
         }
 
         public List<string> Get()
         {
             List<string> prepositions = new List<string>();
 
-            if (IsLengthThree() && IsLastLetterBar() && DoesntContainLetterD())
+            foreach (string word in _text)
             {
-                prepositions.Add(_text);
+                if (IsPrepositionConditionMeet(word))
+                {
+                    prepositions.Add(word);
+                }
             }
 
             return prepositions;
         }
 
-        private string[] SplitText()
+        private string[] SplitText(string text)
         {
-            return _text.Split(' ');
+            return text.Split(' ');
         }
 
-        private bool IsLengthThree()
+        private bool IsPrepositionConditionMeet(string text)
         {
-            return _text.Length == 3;
+            return IsLengthThree(text) && IsLastLetterBar(text) && DoesntContainLetterD(text);
         }
 
-        private bool IsLastLetterBar()
+        private bool IsLengthThree(string text)
+        {
+            return text.Length == 3;
+        }
+
+        private bool IsLastLetterBar(string text)
         {
             Bar bar = new Bar();
             List<string> BarLetters = bar.Get();
 
-            return BarLetters.Contains(_text[_text.Length - 1].ToString());
+            return BarLetters.Contains(text[text.Length - 1].ToString());
         }
 
-        private bool DoesntContainLetterD()
+        private bool DoesntContainLetterD(string text)
         {
-            return !_text.Contains("d");
+            return !text.Contains("d");
+        }
+    }
+
+    public class Verbs
+    {
+        public Verbs()
+        {
+
         }
     }
 }
