@@ -11,9 +11,8 @@ namespace Tests
         {
             string text = "Hello World";
             string[] expected = {"hello","world"};
-            TextFormatter formatter = new TextFormatter(text);
 
-            string[] actual = formatter.SplitText();
+            string[] actual = TextFormatter.LowerTextAndSplit(text);
             
             Assert.Equal(expected, actual);
         }

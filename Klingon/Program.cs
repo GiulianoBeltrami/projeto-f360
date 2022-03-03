@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using FileManager;
-using KlingonAlphabet;
+﻿using FileManager;
+using Klingon.Alphabet.Functions;
+using Klingon.Alphabet.Structure;
 
 namespace Klingon
 {
@@ -13,18 +9,18 @@ namespace Klingon
         static void Main(string[] args)
         {
 
-            Foo foo = new Foo();
-            Bar bar = new Bar();
-            List<string> FooLetters = foo.Get();
-            List<string> BarLetters = bar.Get();
-
             FileReader reader = new FileReader();
+            string text = reader.ParseFile("./assets/klingon-textoA.txt");
 
-            string text = reader.ParseFile("./assets/klingon-textoB.txt");
+            KlingonFunctionFactory factory = new KlingonFunctionFactory();
             
-            Prepositions prepositions = new Prepositions(text);
+            int prepositions = factory.Prepositions.Get(text).Count;
+            int verbs = factory.Verbs.Get(text).Count;
+            int firstPersonVerb = factory.Verbs.GetFirstPerson(text).Count;
 
-            System.Console.WriteLine("Preposições no texto: " + prepositions.Get().Count);
+            System.Console.WriteLine("Preposições no texto: " + prepositions);
+            System.Console.WriteLine("Verbos no texto: " + verbs);
+            System.Console.WriteLine("Verbos em primeira pessoa no texto: " + firstPersonVerb);
         }
     }
 }
