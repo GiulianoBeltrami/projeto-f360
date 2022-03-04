@@ -1,24 +1,8 @@
 using System.Collections.Generic;
-using Klingon.Alphabet.Structure;
+using Interfaces.Klingon.Structure;
 using TextHandler;
-
-
 namespace Klingon.Alphabet.Functions
 {
-
-    public interface IKlingonFunctionFactory
-    {
-        public Prepositions Prepositions { get;}
-        public Verbs Verbs { get;}
-    }
-
-    public class KlingonFunctionFactory : IKlingonFunctionFactory
-    {
-        public Prepositions Prepositions { get =>  new Prepositions(KlingonStructureFactory);}
-        public Verbs Verbs { get => new Verbs(KlingonStructureFactory); }
-        private KlingonStructureFactory KlingonStructureFactory { get => new KlingonStructureFactory();}
-    }
-
     public class Prepositions
     {
         private IKlingonStructure _klingonStructure;

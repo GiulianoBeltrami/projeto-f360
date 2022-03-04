@@ -1,54 +1,9 @@
 using System.Collections.Generic;
 using Xunit;
-using System.Linq;
-using Klingon.Alphabet.Functions;
 using KlingonAlphabet.Fixture;
 
 namespace Tests
 {
-
-    public class FooTest : IClassFixture<KlingonStructureFixture>
-    {
-        KlingonStructureFixture _fixture;
-        public FooTest(KlingonStructureFixture fixture)
-        {
-            _fixture = fixture;
-        }
-
-        [Fact]
-        public void Get_FooLetters_ReturnSameLetters()
-        {
-            List<string> expected = new List<string>() { "s", "l", "f", "w", "k" };
-
-            List<string> actual = _fixture.KlingonStructureFactory.Foo.Get();
-
-            Assert.Equal(expected, actual);
-        }
-
-    }
-
-
-    public class BarTest : IClassFixture<KlingonStructureFixture>
-    {
-        KlingonStructureFixture _fixture;
-        public BarTest(KlingonStructureFixture fixture)
-        {
-            _fixture = fixture;
-        }
-
-        [Fact]
-        public void Get_BarLetters_ReturnLetters()
-        {
-            List<string> fooLetters = _fixture.KlingonStructureFactory.Foo.Get();
-            List<string> barLetters = _fixture.KlingonStructureFactory.Bar.Get();
-
-            bool IsBarContainFoo = barLetters.Any(x => fooLetters.Any(y => x == y));
-            Assert.NotEmpty(barLetters);
-            Assert.False(IsBarContainFoo);
-        }
-    }
-
-
     public class PrepositionsTest : IClassFixture<KlingonFunctionFixture>
     {
         private KlingonFunctionFixture _fixture;
@@ -105,16 +60,11 @@ namespace Tests
         [Fact]
         public void Get_OneVerb_ReturnOneVerb()
         {
-            //verbo em primeira pessoa
             string verb = "asdfgrews";
-            //verbo em outros tempos
-            //string verb = "ssdfgrews"
-
             List<string> expected = new List<string>();
             expected.Add(verb);
 
             List<string> actual = _fixture.KlingonFunctionFactory.Verbs.Get(verb);
-
 
             Assert.Equal(expected, actual);
         }
@@ -124,13 +74,11 @@ namespace Tests
         {
             string verb = "asdfgrews";
             string verb2 = verb + " " + verb;
-
             List<string> expected = new List<string>();
             expected.Add(verb);
             expected.Add(verb);
 
             List<string> actual = _fixture.KlingonFunctionFactory.Verbs.Get(verb2);
-
 
             Assert.Equal(expected, actual);
         }
@@ -140,7 +88,6 @@ namespace Tests
         public void Get_OneFirstPersonVerb_ReturnOneVerb()
         {
             string firstPersonVerb = "asdfgrews";
-
             List<string> expected = new List<string>();
             expected.Add(firstPersonVerb);
 
@@ -155,7 +102,6 @@ namespace Tests
             string firstPersonVerb = "asdfgrews";
             string anotherPersonVerb = "ssdfgrews";
             string joinVerbs = firstPersonVerb + " " + anotherPersonVerb;
-
             List<string> expected = new List<string>();
             expected.Add(firstPersonVerb);
 

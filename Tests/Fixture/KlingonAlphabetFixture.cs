@@ -1,5 +1,5 @@
-using Klingon.Alphabet.Functions;
-using Klingon.Alphabet.Structure;
+
+using Klingon.Factory;
 
 namespace KlingonAlphabet.Fixture
 {

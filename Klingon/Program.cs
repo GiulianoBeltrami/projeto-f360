@@ -1,6 +1,5 @@
 ﻿using FileManager;
-using Klingon.Alphabet.Functions;
-using Klingon.Alphabet.Structure;
+using Klingon.Factory;
 
 namespace Klingon
 {
@@ -9,8 +8,7 @@ namespace Klingon
         static void Main(string[] args)
         {
 
-            FileReader reader = new FileReader();
-            string text = reader.ParseFile("./assets/klingon-textoA.txt");
+            string text = FileReader.ParseFile("./assets/klingon-textoA.txt");
 
             KlingonFunctionFactory factory = new KlingonFunctionFactory();
             

@@ -2,18 +2,6 @@ using System.Collections.Generic;
 
 namespace Klingon.Alphabet.Structure
 {
-    public interface IKlingonStructure
-    {
-        public Foo Foo { get; }
-        public Bar Bar { get; }
-    }
-
-    public class KlingonStructureFactory : IKlingonStructure
-    {
-        public Foo Foo { get => new Foo(); }
-        public Bar Bar { get => new Bar(); }
-    }
-
     public class Foo
     {
         private List<string> _fooLetters;
