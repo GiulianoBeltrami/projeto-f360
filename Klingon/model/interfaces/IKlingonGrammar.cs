@@ -1,9 +1,9 @@
-using Klingon.Alphabet.Functions;
+using Klingon.Alphabet.Grammar;
 using Klingon.Factory;
 
-namespace Interfaces.Klingon.Functions
+namespace Interfaces.Klingon.Grammar
 {
-    public interface IKlingonFunctions
+    public interface IKlingonGrammar
     {
         public Prepositions Prepositions { get; }
         public Verbs Verbs { get; }

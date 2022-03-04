@@ -2,6 +2,14 @@ using System.Collections.Generic;
 
 namespace Klingon.Alphabet.Structure
 {
+    public static class AlphabetOrder
+    {
+        public static string Get()
+        {
+            return "kbwrqdnfxjmlvhtcgzps";
+        }
+    }
+
     public class Foo
     {
         private List<string> _fooLetters;
@@ -31,7 +39,7 @@ namespace Klingon.Alphabet.Structure
         {
             List<string> alphabet = new List<string>()
             {
-                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+                "k", "b", "w", "r", "q", "d", "n", "f", "x", "j", "m", "l", "v", "h", "t", "c", "g", "z", "p", "s"
             };
 
             foreach (var letter in alphabet)

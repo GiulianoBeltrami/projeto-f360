@@ -4,10 +4,10 @@ using KlingonAlphabet.Fixture;
 
 namespace Tests
 {
-    public class PrepositionsTest : IClassFixture<KlingonFunctionFixture>
+    public class PrepositionsTest : IClassFixture<KlingonGrammarFixture>
     {
-        private KlingonFunctionFixture _fixture;
-        public PrepositionsTest(KlingonFunctionFixture fixture)
+        private KlingonGrammarFixture _fixture;
+        public PrepositionsTest(KlingonGrammarFixture fixture)
         {
             _fixture = fixture;
         }
@@ -17,7 +17,7 @@ namespace Tests
         {
             List<string> expectedPrepositionList = new List<string>() { "vwv" };
 
-            List<string> actualPrepositionList = _fixture.KlingonFunctionFactory.Prepositions.Get("vwv");
+            List<string> actualPrepositionList = _fixture.KlingonGrammarFactory.Prepositions.Get("vwv");
 
             Assert.Equal(expectedPrepositionList, actualPrepositionList);
         }
@@ -27,7 +27,7 @@ namespace Tests
         {
             List<string> expectedPrepositionList = new List<string>();
 
-            List<string> actualPrepositionList = _fixture.KlingonFunctionFactory.Prepositions.Get("");
+            List<string> actualPrepositionList = _fixture.KlingonGrammarFactory.Prepositions.Get("");
 
             Assert.Equal(expectedPrepositionList, actualPrepositionList);
         }
@@ -42,17 +42,17 @@ namespace Tests
             expectedPrepositionList.Add("vwv");
             expectedPrepositionList.Add("vwv");
 
-            List<string> actualPrepositionList = _fixture.KlingonFunctionFactory.Prepositions.Get(preposition);
+            List<string> actualPrepositionList = _fixture.KlingonGrammarFactory.Prepositions.Get(preposition);
 
             Assert.Equal(expectedPrepositionList, actualPrepositionList);
         }
 
     }
 
-    public class VerbsTest : IClassFixture<KlingonFunctionFixture>
+    public class VerbsTest : IClassFixture<KlingonGrammarFixture>
     {
-        KlingonFunctionFixture _fixture;
-        public VerbsTest(KlingonFunctionFixture fixture)
+        KlingonGrammarFixture _fixture;
+        public VerbsTest(KlingonGrammarFixture fixture)
         {
             _fixture = fixture;
         }
@@ -60,11 +60,11 @@ namespace Tests
         [Fact]
         public void Get_OneVerb_ReturnOneVerb()
         {
-            string verb = "asdfgrews";
+            string verb = "xmbhxlml";
             List<string> expected = new List<string>();
             expected.Add(verb);
 
-            List<string> actual = _fixture.KlingonFunctionFactory.Verbs.Get(verb);
+            List<string> actual = _fixture.KlingonGrammarFactory.Verbs.Get(verb);
 
             Assert.Equal(expected, actual);
         }
@@ -72,13 +72,13 @@ namespace Tests
         [Fact]
         public void Get_TwoVerbs_ReturnTwoVerbs()
         {
-            string verb = "asdfgrews";
+            string verb = "fsdfgrews";
             string verb2 = verb + " " + verb;
             List<string> expected = new List<string>();
             expected.Add(verb);
             expected.Add(verb);
 
-            List<string> actual = _fixture.KlingonFunctionFactory.Verbs.Get(verb2);
+            List<string> actual = _fixture.KlingonGrammarFactory.Verbs.Get(verb2);
 
             Assert.Equal(expected, actual);
         }
@@ -87,11 +87,11 @@ namespace Tests
         [Fact]
         public void Get_OneFirstPersonVerb_ReturnOneVerb()
         {
-            string firstPersonVerb = "asdfgrews";
+            string firstPersonVerb = "dsdfgrews";
             List<string> expected = new List<string>();
             expected.Add(firstPersonVerb);
 
-            List<string> actual = _fixture.KlingonFunctionFactory.Verbs.GetFirstPerson(firstPersonVerb);
+            List<string> actual = _fixture.KlingonGrammarFactory.Verbs.GetFirstPerson(firstPersonVerb);
 
             Assert.Equal(expected, actual);
         }
@@ -99,13 +99,13 @@ namespace Tests
         [Fact]
         public void GetFirstPerson_TwoVerbs_ReturnOneFirstPersonVerb()
         {
-            string firstPersonVerb = "asdfgrews";
+            string firstPersonVerb = "dsdfgrews";
             string anotherPersonVerb = "ssdfgrews";
             string joinVerbs = firstPersonVerb + " " + anotherPersonVerb;
             List<string> expected = new List<string>();
             expected.Add(firstPersonVerb);
 
-            List<string> actual = _fixture.KlingonFunctionFactory.Verbs.GetFirstPerson(joinVerbs);
+            List<string> actual = _fixture.KlingonGrammarFactory.Verbs.GetFirstPerson(joinVerbs);
 
             Assert.Equal(expected, actual);
         }

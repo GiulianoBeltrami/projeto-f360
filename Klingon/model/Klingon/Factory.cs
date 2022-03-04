@@ -1,6 +1,6 @@
-using Interfaces.Klingon.Functions;
+using Interfaces.Klingon.Grammar;
 using Interfaces.Klingon.Structure;
-using Klingon.Alphabet.Functions;
+using Klingon.Alphabet.Grammar;
 using Klingon.Alphabet.Structure;
 
 namespace Klingon.Factory
@@ -11,7 +11,7 @@ namespace Klingon.Factory
         public Bar Bar { get => new Bar(); }
     }
 
-    public class KlingonFunctionFactory : IKlingonFunctions
+    public class KlingonGrammarFactory : IKlingonGrammar
     {
         public Prepositions Prepositions { get => new Prepositions(KlingonStructureFactory); }
         public Verbs Verbs { get => new Verbs(KlingonStructureFactory); }

@@ -1,8 +1,3 @@
-C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.csproj.AssemblyReference.cache
-C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.AssemblyInfoInputs.cache
-C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.AssemblyInfo.cs
-C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.csproj.CoreCompileInputs.cache
 C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\bin\Debug\net5.0\Klingon.exe
 C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\bin\Debug\net5.0\Klingon.deps.json
 C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\bin\Debug\net5.0\Klingon.runtimeconfig.json
@@ -10,6 +5,11 @@ C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\bin\Debug\net5.0\Klingo
 C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\bin\Debug\net5.0\Klingon.dll
 C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\bin\Debug\net5.0\ref\Klingon.dll
 C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\bin\Debug\net5.0\Klingon.pdb
+C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.csproj.AssemblyReference.cache
+C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.AssemblyInfoInputs.cache
+C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.AssemblyInfo.cs
+C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.csproj.CoreCompileInputs.cache
 C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.dll
 C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\ref\Klingon.dll
 C:\Users\Giuliano VB\Desktop\Github\projeto-f360\Klingon\obj\Debug\net5.0\Klingon.pdb

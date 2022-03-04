@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Interfaces.Klingon.Structure;
 using TextHandler;
-namespace Klingon.Alphabet.Functions
+namespace Klingon.Alphabet.Grammar
 {
     public class Prepositions
     {

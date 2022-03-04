@@ -12,12 +12,13 @@ namespace KlingonAlphabet.Fixture
         }
     }
 
-    public class KlingonFunctionFixture
+    public class KlingonGrammarFixture
     {
-        public KlingonFunctionFactory KlingonFunctionFactory { get; private set; }
-        public KlingonFunctionFixture()
+        public KlingonGrammarFactory KlingonGrammarFactory { get; private set; }
+        public KlingonGrammarFixture()
         {
-            KlingonFunctionFactory = new KlingonFunctionFactory();
+            KlingonGrammarFactory = new KlingonGrammarFactory();
         }
     }
+
 }
