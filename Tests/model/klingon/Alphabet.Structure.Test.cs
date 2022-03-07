@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Klingon.Alphabet.Structure;
 using KlingonAlphabet.Fixture;
 using Xunit;
 
@@ -43,6 +44,31 @@ namespace Tests
             bool IsBarContainFoo = barLetters.Any(x => fooLetters.Any(y => x == y));
             Assert.NotEmpty(barLetters);
             Assert.False(IsBarContainFoo);
+        }
+    }
+
+
+    public class AlphabetOrderTest
+    {
+        [Fact]
+        public void Get_ReturnAlphabet()
+        {
+            string expected = "kbwrqdnfxjmlvhtcgzps";
+
+            string actual = AlphabetOrder.Get();
+
+            Assert.Equal(expected, actual);
+        }
+
+                [Fact]
+        public void GetAlphabetWithNumber_ReturnAlphabetWithNumber()
+        {
+            Dictionary<char,int> expected = new Dictionary<char,int>();
+            expected.Add('k',0);
+
+            Dictionary<char,int> actual = AlphabetOrder.GetAlphabetWithNumber();
+
+            Assert.Equal(expected.GetValueOrDefault('k'), actual.GetValueOrDefault('k'));
         }
     }
 }

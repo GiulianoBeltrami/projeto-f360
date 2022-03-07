@@ -1,7 +1,11 @@
 using Interfaces.Klingon.Grammar;
+using Interfaces.Klingon.Numbers;
 using Interfaces.Klingon.Structure;
+using Interfaces.Klingon.Vocabularies;
 using Klingon.Alphabet.Grammar;
 using Klingon.Alphabet.Structure;
+using Klingon.Alphabet.Vocabulary;
+using Klingon.Numbers;
 
 namespace Klingon.Factory
 {
@@ -17,4 +21,15 @@ namespace Klingon.Factory
         public Verbs Verbs { get => new Verbs(KlingonStructureFactory); }
         public KlingonStructureFactory KlingonStructureFactory { get => new KlingonStructureFactory(); }
     }
+
+    public class KlingonVocabularyFactory : IKlingonVocabulary
+    {
+        public Vocabulary Vocabulary { get => new Vocabulary(); }
+    }
+
+    public class KlingonNumberFactory : IKlingonNumber
+    {
+        public Number Number { get => new Number(); }
+    }
+
 }

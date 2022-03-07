@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Xunit;
 using Klingon.Alphabet.Vocabulary;
 using Klingon.Alphabet.Comparer;
+using Klingon.Factory;
 
 namespace Tests
 {
@@ -14,8 +15,8 @@ namespace Tests
             string expectedWords = "kkr kkqrz";
             string sampleWords = "kkqrz kkqrz kkr kkr";
 
-            Vocabulary vocabulary = new Vocabulary();
-            string actualWords = vocabulary.Get(sampleWords);
+            KlingonVocabularyFactory vocabularyFactory = new KlingonVocabularyFactory();
+            string actualWords = vocabularyFactory.Vocabulary.Get(sampleWords);
 
             Assert.Equal(expectedWords, actualWords);
         }

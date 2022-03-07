@@ -8,6 +8,19 @@ namespace Klingon.Alphabet.Structure
         {
             return "kbwrqdnfxjmlvhtcgzps";
         }
+
+        public static Dictionary<char, int> GetAlphabetWithNumber()
+        {
+            Dictionary<char, int> lettersNumericValue = new Dictionary<char, int>();
+            string alphabet = AlphabetOrder.Get();
+
+            for (int i = 0; i < alphabet.Length; i++)
+            {
+                lettersNumericValue.Add(alphabet[i],i);
+            }
+
+            return lettersNumericValue;
+        }
     }
 
     public class Foo
